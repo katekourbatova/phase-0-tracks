@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form!</title>
+</head>
+<body>
+	<h1>Hotel booking form</h1>
+	<form action="success.html" method="post">
+		<fieldset>
+			<div>
+				<label>Full name: </label>
+				<input type="text" name="name">
+			</div>
+
+			<div>
+				<label>Email: </label>
+				<input type="email" name="email">
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div>
+				<label>Date of arrival</label>
+				<input type="date" name="date-arrive">
+
+				<label>Date of departure</label>
+				<input type="date" name="date-depart">
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div>
+				<label>Room type: </label>
+				<select name="roomtype">
+					<option value="double">Double Room</option>
+					<option value="queen">Queen Room</option>
+					<option value="king">King Room</option>
+				</select>
+			</div>
+
+			<div>
+				<label>Bringing kids or pets?</label>
+				<br>
+				<input type="checkbox" name="kids" value="kids">
+				Kids
+				<br>
+				<input type="checkbox" name="pets" value="pets">
+				Pets
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div>
+				<textarea maxlength="500" rows="3" placeholder="Any comments or requests?"></textarea>
+			</div>
+		</fieldset>
+		<button type="submit">Book a room!</button>
+	</form>
+
+</body>
+</html>
