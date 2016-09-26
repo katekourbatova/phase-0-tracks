@@ -11,3 +11,9 @@
 .list {
 	font-size: 0.8em;
 }
+.job:hover {
+	background-color: red;
+}
+.volunteer-gig > h3 {
+	color: blue;
+}
