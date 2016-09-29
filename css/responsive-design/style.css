@@ -1,3 +1,7 @@
+body {
+  max-width:960px;
+}
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -29,4 +33,48 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+#external-links {
+  width:20%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 3px;
+}
+
+main {
+  width: 78%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*This is a media query
+  @media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}*/
+
+@media screen and (max-width: 515px) {
+  #external-links {
+    width:100%;
+  }
+  main {
+    width:100%;
+    vertical-align: baseline;
+  }
+
+}
+
+@media screen and (min-width: 960px) {
+  main {
+    width: 50%;
+  }
+  #quote{
+    width: 18%;
+    vertical-align: top;
+    position: absolute;
+    right:0;
+    margin:10px;
+  }
 }
