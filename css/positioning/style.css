@@ -1,0 +1,28 @@
+#octopus {
+  display: block;
+  margin: 90px auto;
+  z-index: 0;
+}
+
+/*
+Using margin: auto and also specifying left and right positions makes the image centered between the specified left/right positions.
+Using percentages rather than pixels allows the octopus to stay together while window is being resized.
+*/
+
+#hat {
+  z-index: 1;
+  position: absolute;
+  margin: auto;
+  top: 10px;
+  left: 10%;
+  right: 10%;
+}
+
+#glasses {
+  z-index: 2;
+  position: absolute;
+  margin: auto;
+  top: 190px;
+  left: 11%;
+  right: 10%;
+}
