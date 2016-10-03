@@ -1,0 +1,13 @@
+#octopus {
+  display: block;
+  margin: 5% auto;
+  z-index: 0;
+}
+
+#hat {
+  z-index: 1;
+}
+
+#glasses {
+  z-index: 2;
+}
