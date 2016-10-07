@@ -16,8 +16,6 @@ else
   likesGarlic = nil
 end
 
-puts "Likes garlic? #{likesGarlic}"
-
 puts "Would you like to enroll in the company's health insurance? Y/N"
 insurance = gets.chomp.upcase
 
@@ -29,26 +27,33 @@ else
   insurance = nil
 end
 
-puts "Wants insurance? #{insurance}"
-
 realAge = Time.new.year - yearBorn
-p realAge
 
 if (realAge == age || realAge == age + 1) && (likesGarlic || insurance)
   result = "Probably not a vampire."
-elsif (realAge != age && realAge != age + 1) && (!likesGarlic && !insurance)
-  result = "Almost certainly a vampire."
-elsif (realAge != age && realAge != age + 1) && (!likesGarlic || !insurance)
+  conclusionReached = true
+end
+
+if (realAge != age && realAge != age + 1) && (!likesGarlic || !insurance)
   result = "Probably a vampire."
-else
-  result = "Results inconclusive."
+  conclusionReached = true
+end
+
+if (realAge != age && realAge != age + 1) && (!likesGarlic && !insurance)
+  result = "Almost certainly a vampire."
+  conclusionReached = true
 end
 
 if name == "Drake Cula" || name == "Tu Fang"
   result = "Definitely a vampire."
+  conclusionReached = true
 end
-p result
 
+if conclusionReached != true
+  result = "Results inconclusive."
+end
+
+p result
 
 
 
