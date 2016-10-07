@@ -36,5 +36,19 @@ p realAge
 
 if (realAge == age || realAge == age + 1) && (likesGarlic || insurance)
   result = "Probably not a vampire."
+elsif (realAge != age && realAge != age + 1) && (!likesGarlic && !insurance)
+  result = "Almost certainly a vampire."
+elsif (realAge != age && realAge != age + 1) && (!likesGarlic || !insurance)
+  result = "Probably a vampire."
+else
+  result = "Results inconclusive."
+end
+
+if name == "Drake Cula" || name == "Tu Fang"
+  result = "Definitely a vampire."
 end
 p result
+
+
+
+
