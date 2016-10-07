@@ -1,0 +1,15 @@
+Algorithm for using elevator
+
+- decide which floor you are going to.
+- check which floor you are currently on by looking for a number near the elevator.
+- if there is no number near the elevator, ask a human what floor you are on.
+  - if the floor you are currently on is a smaller number than the floor you are going to:
+    - press the up button near the elevator door
+  - if the floor you are currently on is a larger number than the floor you are going to:
+    - press the down button near the elevator door
+  - if you are already on the floor you want to go to, you don't need to use the elevator.
+- when the elevator arrives and the door opens, go inside the elevator.
+- press the button with the number of the floor you are going to.
+- when the elevator stops, check if the number it is displaying is equal to the number of the floor you are going to.
+  - if the numbers are equal, leave the elevator
+  - if the numbers are not equal, stay in the elevator and repeat until they are equal.
