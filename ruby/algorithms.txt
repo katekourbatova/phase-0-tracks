@@ -13,3 +13,28 @@ Algorithm for using elevator
 - when the elevator stops, check if the number it is displaying is equal to the number of the floor you are going to.
   - if the numbers are equal, leave the elevator
   - if the numbers are not equal, stay in the elevator and repeat until they are equal.
+
+
+
+Algorithm for cooking an egg easy-over
+
+- retrieve egg carton from fridge, pan from the right bottom cabinet, cooking oil from the counter, plastic spatula from the drawer, small plate or spoon rest from the left bottom cabinet, and salt and pepper from the top cabinet.
+- place pan on the stove
+- open oil, spread 1 tsp of oil on the pan, close oil
+- turn the burner that the pan is on to medium heat
+- wait 1 minute while the pan heats up
+- retrieve one 1 egg from the carton, crack it, place its contents into the pan, and the shells into the trash can
+- place the egg carton back into the fridge
+- wash your hands (or whatever appendage you were holding the egg shell with)
+- sprinkle a pinch of salt and pepper (each) on the egg
+- wait 30 seconds, check if the egg white is completely opaque
+  - if the egg white is still partially see-through and wobbly, check again every 15 seconds, until the egg white is completely opaque
+- with the spatula, turn over the egg
+- set spatula aside on a clean plate or spoon rest
+- wait 30 seconds, turn off the burner
+- with the spatula, place the egg onto a clean plate
+- place the plate on the table
+- tell the person who requested the egg that it is ready to eat
+- return the cooking oil, salt, and pepper to the locations you retrieved them from.
+- place the pan and spatula into the sink
+- wash everything that is in the sink, and place the items into the dish drying rack
