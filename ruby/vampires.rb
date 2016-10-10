@@ -33,6 +33,12 @@ while repeat >= 1
 
   realAge = Time.new.year - yearBorn
 
+  puts "Please list your allergies one at a time (press enter or return after each one). When you are done, type 'done' and press enter or return."
+  allergy = nil
+  until allergy == "sunshine" || allergy == "done"
+    allergy = gets.chomp.downcase
+  end
+
   if (realAge == age || realAge == age + 1) && (likesGarlic || insurance)
     result = "Probably not a vampire."
     conclusionReached = true
@@ -50,6 +56,11 @@ while repeat >= 1
 
   if name == "Drake Cula" || name == "Tu Fang"
     result = "Definitely a vampire."
+    conclusionReached = true
+  end
+
+  if allergy == "sunshine"
+    result = "Probably a vampire."
     conclusionReached = true
   end
 
