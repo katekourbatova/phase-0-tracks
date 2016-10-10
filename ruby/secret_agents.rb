@@ -24,23 +24,27 @@
 # puts "Please give us a word to encrypt."
 # string = gets.chomp
 
-# def encrypt(x)
-#   i = 0
-#   while i<x.length
-#     if x[i] == " "
-#       i +=1
-#     else
-#       x[i] = x[i].next!
-#       i += 1
-#     end
-#   end
-# end
+def encrypt(x)
+  i = 0
+  while i<x.length
+    if x[i] == " "
+      i +=1
+    elsif x[i] == "z"
+      x[i] = "a"
+      i += 1
+    else
+      x[i] = x[i].next!
+      i += 1
+    end
+  end
+  puts x
+end
 
 # encrypt(string)
 # puts string
 
-puts "Please give us something to decrypt."
-encrypted_str = gets.chomp
+# puts "Please give us something to decrypt."
+# encrypted_str = gets.chomp
 
 
 def backwards(x)
@@ -60,7 +64,15 @@ def decrypt(x)
       i += 1
     end
   end
+  puts x
 end
 
-decrypt(encrypted_str)
-puts encrypted_str
+# decrypt(encrypted_str)
+# puts encrypted_str
+
+
+encrypt("abc")
+encrypt("zed")
+decrypt("bcd")
+decrypt("afe")
+decrypt("zed")
