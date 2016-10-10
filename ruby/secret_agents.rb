@@ -21,20 +21,46 @@
 # If the character is a space, make no change.
 
 
-puts "Please give us a word to encrypt."
-string = gets.chomp
+# puts "Please give us a word to encrypt."
+# string = gets.chomp
 
-def encrypt(string)
+# def encrypt(x)
+#   i = 0
+#   while i<x.length
+#     if x[i] == " "
+#       i +=1
+#     else
+#       x[i] = x[i].next!
+#       i += 1
+#     end
+#   end
+# end
+
+# encrypt(string)
+# puts string
+
+puts "Please give us something to decrypt."
+encrypted_str = gets.chomp
+
+
+def backwards(x)
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  i2 = alphabet.index(x)
+  i2 -= 1
+  x = alphabet[i2]
+end
+
+def decrypt(x)
   i = 0
-  while i<string.length
-    if string[i] == " "
+  while i < x.length
+    if x[i] == " "
       i +=1
     else
-      string[i] = string[i].next!
+      x[i] = backwards(x[i])
       i += 1
     end
   end
 end
 
-encrypt(string)
-puts string
+decrypt(encrypted_str)
+puts encrypted_str
