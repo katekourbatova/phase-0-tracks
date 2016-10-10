@@ -37,7 +37,7 @@ def encrypt(x)
       i += 1
     end
   end
-  puts x
+  return x
 end
 
 # encrypt(string)
@@ -64,15 +64,14 @@ def decrypt(x)
       i += 1
     end
   end
-  puts x
+  return x
 end
 
 # decrypt(encrypted_str)
 # puts encrypted_str
 
 
-encrypt("abc")
-encrypt("zed")
-decrypt("bcd")
-decrypt("afe")
-decrypt("zed")
+print decrypt(encrypt("swordfish"))
+# This works because encrypt returns the encrypted form of "swordfish",
+# and then decrypt takes the encryption and decrypts it again back to "swordfish."
+# to make sure that worked, I specified the return value for the methods.
