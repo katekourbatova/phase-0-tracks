@@ -69,3 +69,24 @@ meaningless_hash = {
   "j" => 24,
   "k" => 85
 }
+
+# Sample call for delete_if method, which iterates through the array, deleting any items that meet a certain condition
+
+
+# Sample call for delete_if method, which iterates through the hash, deleting any items that meet a certain condition
+
+
+# Sample call for keep_if method, which filters the array for only items that do satisfy a certain condition
+
+
+# Sample call for keep_if method, which filters the hash for only items that do satisfy a certain condition
+
+
+# Sample call for select! method, which filters the array for only items that do satisfy a certain condition, returns nil if no changes were made
+
+
+# Sample call for select! method, which filters the hash for only items that do satisfy a certain condition, returns nil if no changes were made
+
+
+# Sample call for drop_while method, which will remove items from the array until the condition in the block evaluates to false, then stops
+
