@@ -7,6 +7,8 @@
 
 # define {|par1, par2| puts par1 + par2  }
 
+
+#Release 1
 pasta_ingredients = ["pasta", "marinara sauce", "bell pepper", "onion", "garlic", "tomato"]
 
 guests_diet_restrictions = {
@@ -51,3 +53,19 @@ end
 
 puts "Pasta ingredients after .map!"
 print pasta_ingredients
+
+#Release 2
+meaningless_array = [1, 6, 234, 64, 25, 950, 35, 7, 3, 2, 5, 6, 98, 38]
+meaningless_hash = {
+  "a" => 1,
+  "b" => 45,
+  "c" => 9,
+  "d" => 2556,
+  "e" => 94,
+  "f" => 340,
+  "g" => 249,
+  "h" => 294,
+  "i" => 8,
+  "j" => 24,
+  "k" => 85
+}
