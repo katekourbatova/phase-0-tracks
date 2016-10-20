@@ -60,4 +60,20 @@ p correct_100_term
 # - move to the next index, repeat while the index is less than the length of the array.
 #   (except this time, keep comparing to each index to the left until you find one that is not smaller)
 
+def insertion_sort(array)
+  key_index = 1
+  while key_index < array.length
+    key = array[key_index]
+    if key >= array[key_index-1] # if key is larger than or equal to the term to the left of it, move on to the next term.
+      key_index +=1
+    else
+      array[key_index] = array[key_index-1] # slides value of left adjacent term one to the right
+      compare_index = key_index - 2 # assigns a variable for the current term being compared
+     
+
+      end
+    end
+  end
+end
+
 
