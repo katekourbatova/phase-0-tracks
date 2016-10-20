@@ -22,6 +22,12 @@ class Puppy
   def bite(item)
     puts "I bit the #{item}! It was great!"
   end
+
+
+  def initialize
+    print "Initializing new puppy instance..."
+  end
+
 end
 
 Spot = Puppy.new
