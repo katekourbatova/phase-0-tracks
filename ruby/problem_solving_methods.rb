@@ -51,29 +51,63 @@ correct_100_term = (generate_fibonacci(100)[99] == 218922995834555169026)
 p correct_100_term
 
 
-# Pseudocode insertion sort method:
-# Start with the second item (index 1) in the list, and assign the value of that item to a "key".
-# Compare the key to the current index-1 (in this case 0).
-# - If the key is bigger, leave it in place.
+# Insertion sort method (not dangerous):
+# Create an array that will hold the sorted numbers, starting with the first item
+# Start with the second item (index 1) in the array, and assign the value of that item to a "key".
+# Compare the key to the (current index-1)
+# - If the key is bigger, add it to the end of sorted array.
 # - If the key is smaller, move the value you're comparing over to the right (move index 0 to index 1),
-#   and then copy the value of the key into the space to the left of the value that is larger than it.
+#   keep comparing until the key is bigger than the current item being compared and then copy the value of the key into the space to the left of the value that is larger than it.
 # - move to the next index, repeat while the index is less than the length of the array.
-#   (except this time, keep comparing to each index to the left until you find one that is not smaller)
+
 
 def insertion_sort(array)
   key_index = 1
+  sorted_array = [array[0]]
+
   while key_index < array.length
     key = array[key_index]
-    if key >= array[key_index-1] # if key is larger than or equal to the term to the left of it, move on to the next term.
+    
+    # debug
+    # p sorted_array
+    # puts "key_index #{key_index}"
+    
+    if key >= sorted_array[-1] # if key is larger than or equal to the last term in the sorted array
+      sorted_array << key
       key_index +=1
-    else
-      array[key_index] = array[key_index-1] # slides value of left adjacent term one to the right
-      compare_index = key_index - 2 # assigns a variable for the current term being compared
-     
 
-      end
+    else
+      
+      n = sorted_array.length - 1
+        while n >= 0
+          # debug
+          # puts "n #{n} -- while"
+
+          sorted_array[n+1] = sorted_array[n]
+        
+          if (n == 0) && (key < sorted_array[n])
+            sorted_array[n] = key
+            key_index += 1
+            # debug
+            # puts "n #{n} -- if"
+            break
+          elsif key >= sorted_array[n]
+            sorted_array[n+1] = key
+            key_index += 1
+            # debug
+            # puts "n #{n} -- elsif"
+            break
+          else
+           n -= 1
+          end
+          
+        end
     end
   end
+  sorted_array
 end
 
+
+test_array = [13,5,29,37,2]
+p insertion_sort(test_array)
 
