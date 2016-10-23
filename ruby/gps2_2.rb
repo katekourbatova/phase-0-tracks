@@ -81,3 +81,27 @@ add_or_update_item(rinas_list, "Ice Cream", 4)
 delete_item(rinas_list, "Lemonade")
 add_or_update_item(rinas_list, "Ice Cream", 1)
 print_list(rinas_list)
+
+
+#Reflection
+
+# What did you learn about pseudocode from working on this challenge?
+# I liked the structure that using input/steps/output provided. It helped organize our thoughts as we worked on writing the methods.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+# It's easy to break up a string into an array, but hashes can store more data, such as quantities for a grocery list.
+
+# What does a method return?
+# A method returns the last thing that was evaluated within it.
+
+# What kind of things can you pass into methods as arguments?
+# You can pass any data type, and you can pass global variables.
+
+# How can you pass information between methods?
+# In order to take data from one method and pass it to another, it should be stored in a variable that the other method can access.
+# Or you can also run one method inside another, and then it has access to local variables within that method.
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+# We got more practice passing information from one method to another, and using methods and driver code.
+# I need more practice on some of these methods (especially passing information between strings, arrays, and hashes).
+# I'm also not sure if we used the fastest way possible to take information from a string and feed it into the keys of a hash.
