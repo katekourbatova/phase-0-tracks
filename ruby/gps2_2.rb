@@ -65,8 +65,18 @@ def print_list(grocery_hash)
   end
 end
 
-kate_list = create_list("carrots apples lettuce", 2)
-add_item(kate_list, "banana", 3)
-delete_item(kate_list, "apples")
-update_quantity(kate_list, "banana", 1)
-print_list(kate_list)
+# First test
+# kate_list = create_list("carrots apples lettuce", 2)
+# add_item(kate_list, "banana", 3)
+# delete_item(kate_list, "apples")
+# update_quantity(kate_list, "banana", 1)
+# print_list(kate_list)
+
+# Release 2: new list
+rinas_list = create_list("Lemonade", 2)
+add_item(rinas_list, "Tomatoes", 3)
+add_item(rinas_list, "Onions", 1)
+add_item(rinas_list, "Ice Cream", 4)
+delete_item(rinas_list, "Lemonade")
+update_quantity(rinas_list, "Ice Cream", 1)
+print_list(rinas_list)
