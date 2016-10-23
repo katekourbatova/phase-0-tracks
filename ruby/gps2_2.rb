@@ -23,7 +23,7 @@ end
 # 1. add key value pair to the hash (item+quantity)
 # 2. print the updated hash (p)
 # output: updated hash
-def add_item (grocery_hash, g_item, quantity=1)
+def add_or_update_item (grocery_hash, g_item, quantity=1)
   grocery_hash[g_item] = quantity
   print_list(grocery_hash)
 end
@@ -47,10 +47,11 @@ end
 # 2. print the updated hash (p)
 # output: updated hash
 
-def update_quantity (grocery_hash, g_item, quantity)
-  grocery_hash[g_item] = quantity
-  print_list(grocery_hash)
-end
+#Redundant method -- included in add_item
+# def update_quantity (grocery_hash, g_item, quantity)
+#   grocery_hash[g_item] = quantity
+#   print_list(grocery_hash)
+# end
 
 # Method to print a list and make it look pretty
 # input: hash
@@ -74,9 +75,9 @@ end
 
 # Release 2: new list
 rinas_list = create_list("Lemonade", 2)
-add_item(rinas_list, "Tomatoes", 3)
-add_item(rinas_list, "Onions", 1)
-add_item(rinas_list, "Ice Cream", 4)
+add_or_update_item(rinas_list, "Tomatoes", 3)
+add_or_update_item(rinas_list, "Onions", 1)
+add_or_update_item(rinas_list, "Ice Cream", 4)
 delete_item(rinas_list, "Lemonade")
-update_quantity(rinas_list, "Ice Cream", 1)
+add_or_update_item(rinas_list, "Ice Cream", 1)
 print_list(rinas_list)
