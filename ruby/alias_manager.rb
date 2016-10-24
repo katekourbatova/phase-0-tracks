@@ -45,5 +45,14 @@ def create_alias(real_name)
 end
 
 
-p create_alias("Kate Kourbatova")
 
+#Driver code for user interface
+
+user_request = nil
+until user_request == "quit"
+  puts "Please enter a name if you'd like to receive a fake alias. If not, please enter 'quit'."
+  user_request = gets.chomp
+  if user_request != "quit"
+    puts create_alias(user_request)
+  end
+end
