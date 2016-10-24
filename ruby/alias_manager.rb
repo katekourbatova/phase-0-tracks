@@ -46,13 +46,17 @@ end
 
 
 
-#Driver code for user interface
+#Driver code for user interface and storing aliases
 
+fake_names = {}
 user_request = nil
 until user_request == "quit"
   puts "Please enter a name if you'd like to receive a fake alias. If not, please enter 'quit'."
   user_request = gets.chomp
   if user_request != "quit"
     puts create_alias(user_request)
+    fake_names[user_request] = create_alias(user_request)
+  else
+    fake_names.each {|real, fake| puts "#{fake} is actually #{real}."}
   end
 end
