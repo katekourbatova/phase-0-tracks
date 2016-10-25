@@ -18,6 +18,21 @@ class Santa
 end
 
 #driver code to test
-santa1 = Santa.new("female", "black")
-santa1.speak
-santa1.eat_milk_and_cookies("biscuit")
+# santa1 = Santa.new("female", "black")
+# santa1.speak
+# santa1.eat_milk_and_cookies("biscuit")
+
+example_genders = ["woman", "genderqueer", "man", "male", "female", "transfeminine", "transmasculine", "nonbinary", "enby", "prefer not to say", "n/a"]
+example_ethnicities = ["Latino", "Native American", "First Nations", "Inuit", "Celtic", "Slavic", "Arabic", "Armenian", "Dinka", "English", "Igbo", "Kurdish", "prefer not to say", "n/a"]
+
+santas = []
+
+example_genders.length.times do |n|
+  santas << Santa.new(example_genders[n], example_ethnicities.shuffle.first)
+  #that paired each example gender with a random ethnicity from the ethnicity array
+end
+
+santas.each do |new_santa|
+  p new_santa
+  puts " "
+end
