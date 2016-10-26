@@ -1,3 +1,28 @@
+class SecretWordGame
+  attr_reader :you_won, :you_lost
+  attr_accessor :prev_guesses
+
+  def initialize
+    # @prev_guesses = {}
+    # @you_won = false
+    # @you_lost = false
+    # @n_allowed_guesses = nil
+    # @secret_word_str = ""
+    # @reveal_word_str = ""
+  end
+
+  def secret_word(word)
+    # @secret_word_str = word
+    # @n_allowed_guesses = word.length + 5
+    # @reveal_word_str = ???
+  end
+
+  def check_guess(guess)
+
+  end
+
+end
+
 # The class is WordGame.
 # The user should be able to access (read and write) the previous guesses (hash) attribute
 # The user should be able to read the ‘you won’ attribute, and ‘you lost’ attribute
@@ -13,7 +38,7 @@
 
 # The secret_word method
 # Breaks word up into array of characters
-# Set number of allowed guesses to 6 + the length of the word
+# Set number of allowed guesses to 5 + the length of the word
 # Revealed word array is equal in length to word array, but has underscores only
 
 # The check_guess method
