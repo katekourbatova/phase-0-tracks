@@ -48,34 +48,36 @@ end
 
 #Driver code:
 
-# puts "Welcome to our word guessing game!"
-# game = SecretWordGame.new
+puts "Welcome to our word guessing game!"
+game = SecretWordGame.new
 
-# puts "Please set a word you'd like your friend to guess."
-# the_word = gets.chomp
+puts "Please set a word you'd like your friend to guess."
+the_word = gets.chomp
 
-# game.set_secret_word(the_word)
+game.set_secret_word(the_word)
 
-# puts "Now invite a friend to guess your word."
+puts "Now invite a friend to guess your word."
 
-# puts "Hello, new player! Your friend has set a secret word for you to guess."
-
-
-# until game.you_won || game.you_lost
-#   puts "Please type in a letter you think is in the word, or the whole word if you think you know it. You have #{game.n_guesses_left} guesses."
-#   guess = gets.chomp
-#   game.check_guess(guess)
-#   puts "The word so far: #{game.reveal_word_str}"
-# end
-
-# if game.you_won
-#   puts "Way to go! You won with #{game.n_guesses_left} guesses left."
-# elsif game.you_lost
-#   puts "You lost.... better luck next time."
-# end
+puts "Hello, new player! Your friend has set a secret word for you to guess."
 
 
+until game.you_won || game.you_lost
+  puts "Please type in a letter you think is in the word, or the whole word if you think you know it. You have #{game.n_guesses_left} guesses."
+  guess = gets.chomp
+  game.check_guess(guess)
+  puts "The word so far: #{game.reveal_word_str}"
+end
 
+if game.you_won
+  puts "Way to go! You won with #{game.n_guesses_left} guesses left."
+elsif game.you_lost
+  puts "You lost.... better luck next time."
+end
+
+
+
+
+# Original pseudocode:
 
 # The class is WordGame.
 # The user should be able to access (read and write) the previous guesses (array) attribute
