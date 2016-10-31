@@ -13,4 +13,8 @@ function reverse(str) {
   return reversedstr
 }
 
-console.log(reverse("reverse me!"))
+var reversed = reverse("reverse me!")
+
+if (2>1) {
+  console.log(reversed)
+}
