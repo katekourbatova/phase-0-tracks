@@ -79,3 +79,23 @@ end
 
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+# The big hash is written out with one pair per line, and using the hash rocket (=>). The keys are strings.
+# The internal, smaller hashes are written with the pairs on one line. The keys are symbols. The key/value pairs are connected by a colon.
+
+# What does require_relative do? How is it different from require?
+# require_relative links in another file that is stored in the same directory as the program. Require gets information from a ruby library.
+
+# What are some ways to iterate through a hash?
+# - .each
+# - many more specific methods, like .keep_if, .delete_if, or .select
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+# The variables were instance variable available within the whole class, and there was no reason for both methods to take @state if it was only being used to print a sentence.
+# It was also awkward to have the sentence spread out across the outputs of two methods, so I changed that.
+
+# What concept did you most solidify in this challenge?
+# Iterating through a complex data structure and accessing data in it (see driver code).
+
+
