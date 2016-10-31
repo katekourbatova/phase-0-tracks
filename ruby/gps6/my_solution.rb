@@ -1,11 +1,11 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge with: Jeremy (Badillo?).
+# We spent 1.75 hours on this challenge together, and finished one release and reflection on our own.
 
 # EXPLANATION OF require_relative
-#
-#
+# require_relative links in a file that is stored in the same directory as the program that requires the relative.
+
 require_relative 'state_data'
 
 class VirusPredictor
@@ -17,43 +17,45 @@ class VirusPredictor
   end
 # combines the outputs of the two methods within it
   def virus_effects
-    print "#{@state} will lose #{predicted_deaths(@population_density, @population, @state)} people in this outbreak and will spread across the state in #{speed_of_spread(@population_density, @state)} months.\n\n"
+    print "#{@state} will lose #{predicted_deaths(@population_density, @population)} people in this outbreak and will spread across the state in #{speed_of_spread(@population_density)} months.\n\n"
   end
 
   private
 # estimates the amount of deaths
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths(population_density, population)
     # predicted deaths is solely based on population density
-    if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
-    elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
-    else
-      number_of_deaths = (@population * 0.05).floor
-    end
 
-    number_of_deaths
+    n = [50, 100, 150, 200]
+    
+    if @population_density >= n[3]
+      coefficient = n[3]/500.0
+    elsif @population_density >= n[2]
+      coefficient = n[2]/500.0
+    elsif @population_density >= n[1]
+      coefficient = n[1]/500.0
+    elsif @population_density >= n[0]
+      coefficient = n[0]/500.0
+    else
+      coefficient = 0.05
+    end
+    
+    number_of_deaths = (@population * coefficient).floor
   end
 # estimates the length of time for deaths to occur.
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread(population_density) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    speed = 0.0
 
     if @population_density >= 200
-      speed += 0.5
+      speed = 0.5
     elsif @population_density >= 150
-      speed += 1
+      speed = 1
     elsif @population_density >= 100
-      speed += 1.5
+      speed = 1.5
     elsif @population_density >= 50
-      speed += 2
+      speed = 2
     else
-      speed += 2.5
+      speed = 2.5
     end
 
     speed
