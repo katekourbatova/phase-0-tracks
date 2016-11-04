@@ -19,7 +19,40 @@ function find_longest(arr) {
   return currentLongestStr
 };
 
-var arrPhrases = ["long phrase","longest phrase","longer phrase", "super long phrase"]
-var arrAnimalBehaviors = ["running", "purring", "chasing smaller animals", "naps"]
-console.log(find_longest(arrPhrases))
-console.log(find_longest(arrAnimalBehaviors))
+// Function that checks whether two objects share at least one key-value pair
+// For each key-value pair in first object, function should check if there is an equivalent key-value pair in second object
+// If matching pair is found, function returns true
+// If no matching pairs are found, function returns false
+
+function match_pair(obj1, obj2) {
+  for (var i in obj1) {
+    if (obj1[i] == obj2[i]) {
+      return true;
+    }
+  }
+  return false // returns false if looping through the first object did not return true
+}
+
+
+
+
+//Driver code
+console.log("Testing function that finds longest phrase.");
+var arrPhrases = ["long phrase","longest phrase","longer phrase", "super long phrase"];
+var arrAnimalBehaviors = ["running", "purring", "chasing smaller animals", "naps"];
+console.log(find_longest(arrPhrases));
+console.log(find_longest(arrAnimalBehaviors));
+
+
+console.log("Testing function that checks whether two objects share key-value pair.");
+console.log("1. Same keys, one matching value")
+console.log(match_pair({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+console.log("2. Same keys, no matching values")
+console.log(match_pair({name: "Steven", age: 54}, {name: "Tamir", age: 65}));
+console.log("3. All different keys, no matching values")
+console.log(match_pair({name: "Steven", age: 54}, {nickname: "Tamir", catname: "Maggie Scratcher"}));
+
+
+
+
+
