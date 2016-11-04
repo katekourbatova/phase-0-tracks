@@ -60,7 +60,7 @@ var arrPhrases = ["long phrase","longest phrase","longer phrase", "super long ph
 var arrAnimalBehaviors = ["running", "purring", "chasing smaller animals", "naps"];
 console.log(find_longest(arrPhrases));
 console.log(find_longest(arrAnimalBehaviors));
-
+console.log("------------");
 
 console.log("Testing function that checks whether two objects share key-value pair.");
 console.log("1. Same keys, one matching value");
@@ -69,9 +69,12 @@ console.log("2. Same keys, no matching values");
 console.log(match_pair({name: "Steven", age: 54}, {name: "Tamir", age: 65}));
 console.log("3. All different keys, no matching values");
 console.log(match_pair({name: "Steven", age: 54}, {nickname: "Tamir", catname: "Maggie Scratcher"}));
+console.log("------------");
 
 console.log("Testing function for creating array of random strings.");
-console.log(build_string_array(2));
-console.log(" ");
-
-
+for (var i = 0; i < 10; i++) {
+  console.log("Iteration number " + (i+1))
+  var array = build_string_array(5);
+  console.log("Created array: " + array);
+  console.log("Its longest string is: " + find_longest(array));
+}
