@@ -1,0 +1,32 @@
+You've joined two tables before. How do you join three?
+
+SELECT reviews.*, businesses.*, users.* FROM reviews INNER JOIN businesses ON reviews.business_id = businesses.id INNER JOIN users ON reviews.user_id = users.id;
+
+1|5|great food|3|3|3|The Beagle Nightclub|3|Angela|Jolie
+2|4|wonderful workout|4|4|4|Lotus Yoga|4|Steven|Wonder
+3|3|second marriages are the best!|1|1|1|Grundy Hollow Wedding Chapel|1|Bradford|Pitt
+
+-------------------------
+
+
+SELECT reviews.*, businesses.name, users.first_name, users.last_name FROM reviews INNER JOIN businesses ON reviews.business_id = businesses.id INNER JOIN users ON reviews.user_id = users.id;
+
+1|5|great food|3|3|The Beagle Nightclub|Angela|Jolie
+2|4|wonderful workout|4|4|Lotus Yoga|Steven|Wonder
+3|3|second marriages are the best!|1|1|Grundy Hollow Wedding Chapel|Bradford|Pitt
+
+---------------------------
+
+There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+SELECT reviews.stars, reviews.comment, businesses.name, users.first_name, users.last_name FROM reviews INNER JOIN businesses ON reviews.business_id = businesses.id INNER JOIN users ON reviews.user_id = users.id;
+
+5|great food|The Beagle Nightclub|Angela|Jolie
+4|wonderful workout|Lotus Yoga|Steven|Wonder
+3|second marriages are the best!|Grundy Hollow Wedding Chapel|Bradford|Pitt
+
+--------------------------
+
+SELECT reviews.stars, reviews.comment, businesses.name, users.first_name, users.last_name FROM reviews INNER JOIN businesses ON reviews.business_id = businesses.id INNER JOIN users ON reviews.user_id = users.id WHERE businesses.name = "Lotus Yoga";
+
+4|wonderful workout|Lotus Yoga|Steven|Wonder
