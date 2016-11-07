@@ -1,0 +1,67 @@
+1. Display the information in one table (either table is fine).
+
+SELECT * from plants;
+
+1|Rubus parviflorus|thimbleberry|20|true|false|1
+2|Rubus spectabilis|salmonberry|20|true|true|1
+3|Rubus leucodermis|black cap raspberry|20|true|true|2
+4|Rubus ursinus|trailing blackberry|20|true|false|2
+5|Rubus unicornus|single-spiked magicberry|200|true|true|3
+--------
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+
+UPDATE forests SET sq_miles = 0 WHERE id=1;
+* because that forest is less than one sq mile.
+
+--------
+3. Display the information in both tables using one query.
+SELECT * FROM plants, forests WHERE plants.closest_forest_id = forests.id;
+
+1|Rubus parviflorus|thimbleberry|20|true|false|1|1|Schmitz Preserve Park|0
+2|Rubus spectabilis|salmonberry|20|true|true|1|1|Schmitz Preserve Park|0
+3|Rubus leucodermis|black cap raspberry|20|true|true|2|2|Mount Rainier National Park|369
+4|Rubus ursinus|trailing blackberry|20|true|false|2|2|Mount Rainier National Park|369
+5|Rubus unicornus|single-spiked magicberry|200|true|true|3|3|Mount Olympus Celestial Preserve|3007
+
+--------
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+SELECT plants.latin_name, plants.common_name, forests.name FROM plants, forests WHERE plants.closest_forest_id = forests.id;
+
+Rubus parviflorus|thimbleberry|Schmitz Preserve Park
+Rubus spectabilis|salmonberry|Schmitz Preserve Park
+Rubus leucodermis|black cap raspberry|Mount Rainier National Park
+Rubus ursinus|trailing blackberry|Mount Rainier National Park
+Rubus unicornus|single-spiked magicberry|Mount Olympus Celestial Preserve
+--------
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+
+DELETE FROM plants WHERE closest_forest_id=3;
+
+* the plants in Mount Olympus Celestial Preserve were not meant to be tracked by mere mortals.
+--------
+Inner join
+SELECT plants.latin_name, plants.common_name, forests.name FROM plants INNER JOIN forests ON plants.closest_forest_id = forests.id;
+
+Rubus parviflorus|thimbleberry|Schmitz Preserve Park
+Rubus spectabilis|salmonberry|Schmitz Preserve Park
+Rubus leucodermis|black cap raspberry|Mount Rainier National Park
+Rubus ursinus|trailing blackberry|Mount Rainier National Park
+
+--------
+Right join
+
+SELECT plants.latin_name, plants.common_name, forests.name FROM plants RIGHT JOIN forests ON plants.closest_forest_id = forests.id;
+
+RIGHT and FULL OUTER JOINs are not currently supported
+
+---------
+Left join
+
+SELECT plants.latin_name, plants.common_name, forests.name FROM forests LEFT JOIN plants ON plants.closest_forest_id = forests.id;
+
+Rubus parviflorus|thimbleberry|Schmitz Preserve Park
+Rubus spectabilis|salmonberry|Schmitz Preserve Park
+Rubus leucodermis|black cap raspberry|Mount Rainier National Park
+Rubus ursinus|trailing blackberry|Mount Rainier National Park
+||Mount Olympus Celestial Preserve
