@@ -39,3 +39,29 @@ Rubus unicornus|single-spiked magicberry|Mount Olympus Celestial Preserve
 DELETE FROM plants WHERE closest_forest_id=3;
 
 * the plants in Mount Olympus Celestial Preserve were not meant to be tracked by mere mortals.
+--------
+Inner join
+SELECT plants.latin_name, plants.common_name, forests.name FROM plants INNER JOIN forests ON plants.closest_forest_id = forests.id;
+
+Rubus parviflorus|thimbleberry|Schmitz Preserve Park
+Rubus spectabilis|salmonberry|Schmitz Preserve Park
+Rubus leucodermis|black cap raspberry|Mount Rainier National Park
+Rubus ursinus|trailing blackberry|Mount Rainier National Park
+
+--------
+Right join
+
+SELECT plants.latin_name, plants.common_name, forests.name FROM plants RIGHT JOIN forests ON plants.closest_forest_id = forests.id;
+
+RIGHT and FULL OUTER JOINs are not currently supported
+
+---------
+Left join
+
+SELECT plants.latin_name, plants.common_name, forests.name FROM forests LEFT JOIN plants ON plants.closest_forest_id = forests.id;
+
+Rubus parviflorus|thimbleberry|Schmitz Preserve Park
+Rubus spectabilis|salmonberry|Schmitz Preserve Park
+Rubus leucodermis|black cap raspberry|Mount Rainier National Park
+Rubus ursinus|trailing blackberry|Mount Rainier National Park
+||Mount Olympus Celestial Preserve
